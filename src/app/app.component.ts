@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'classic';
+  title = 'PLB-111223';
+
+  traitementDuApp(msg : any) {
+    alert(msg);
+  }
 }

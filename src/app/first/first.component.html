@@ -1,0 +1,14 @@
+<p>Et moi, je suis le FirstComponent</p>
+
+<div> Formation : {{ title }} -- {{ year }}  </div>
+
+<div [hidden]="hd" [style.backgroundColor]="color">Exemple de Property Binding</div>
+
+<button (click)="traitement()" class="btn btn-primary">Click me</button>
+
+<input [(ngModel)]="title" type="text" class="form-control">
+<hr>
+
+<app-child (sendMsgToParent)="traitementDuChild($event)" [myColor]="color"></app-child>
+
+
