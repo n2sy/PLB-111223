@@ -1,0 +1,24 @@
+<p [ngStyle]="{
+    backgroundColor : bg,
+    color : cl,
+    fontSize : size,
+    fontFamily : font
+    }">Exercice d'application Ms-word</p>
+
+<label for="">Background Color</label>
+<input [(ngModel)]="bg" type="text" class="form-control">
+
+<label for="">Text Color</label>
+<input [(ngModel)]="cl" type="text" class="form-control">
+
+<label for="">Text Size</label>
+<input #sz (input)="changeSize(sz.value)" type="number" class="form-control">
+ {{ sz.value }}
+ <br>
+<label for="">Text Police</label>
+<select [(ngModel)]="font" class="form-control" >
+    <option value=""></option>
+    <option value="Arial">Arial</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Phosphate">Phosphate</option>
+</select>
