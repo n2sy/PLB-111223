@@ -10,6 +10,10 @@ import { CvComponent } from './cv/cv.component';
 import { ItemComponent } from './item/item.component';
 import { ListeComponent } from './liste/liste.component';
 import { DetailsComponent } from './details/details.component';
+import { DirectComponent } from './direct/direct.component';
+import { AddAccountComponent } from './accounts/add-account/add-account.component';
+import { HomeAccountComponent } from './accounts/home-account/home-account.component';
+import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { DetailsComponent } from './details/details.component';
     CvComponent,
     ItemComponent,
     ListeComponent,
-    DetailsComponent
+    DetailsComponent,
+    DirectComponent,
+    AddAccountComponent,
+    HomeAccountComponent,
+    ItemAccountComponent
   ],
   imports: [
     BrowserModule, CommonModule, FormsModule
