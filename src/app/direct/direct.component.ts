@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DirectComponent {
   tab : number[] = [];
+
+  bg = 'pink';
+  cl = 'grey';
 }

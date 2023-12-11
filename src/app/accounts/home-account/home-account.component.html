@@ -1,4 +1,4 @@
 
-<app-add-account></app-add-account>
+<app-add-account (eventToHome)="recuperNewAccount($event)"></app-add-account>
 
-<app-item-account *ngFor="let acc of tabAccounts"></app-item-account>
+<app-item-account *ngFor="let acc of tabAccounts" [oneAccount]="acc"></app-item-account>

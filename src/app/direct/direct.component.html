@@ -6,13 +6,17 @@
 @if(tab.length) {
     <div>
         Le tableau est non vide
-    </div>
-    
+    </div> 
 }
-
 @else {
     <div>
         Le tableau est  vide
     </div>
-
 }
+
+<div [ngStyle]="{
+    backgroundColor: bg,
+    color : cl
+    }">
+    Exemple de NgStyle
+</div>

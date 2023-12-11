@@ -1,1 +1,9 @@
-<p>add-account works!</p>
+<label for="">Account Name</label>
+<input [(ngModel)]="newName" type="text" class="form-control">
+
+<label for="">Account Status</label>
+<select [(ngModel)]="newStatut" class="form-control">
+    <option *ngFor="let st of allStatus" [value]="st">{{ st }} </option>
+</select>
+<br>
+<button (click)="sendNewAccountToHome()" class="btn btn-primary">Add Account</button>

@@ -15,5 +15,9 @@ tabAccounts = [
     name : 'Dimitri Account',
     statut : 'active'
   }
-]
+];
+
+recuperNewAccount(newAccount) {
+  this.tabAccounts.push(newAccount);
+}
 }
