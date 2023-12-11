@@ -9,6 +9,8 @@ export class ChildComponent {
   @Input({required : true}) myColor : string = "grey";
   @Output() sendMsgToParent = new EventEmitter();
 
+ 
+
   sendMessage() {
     this.sendMsgToParent.emit("Message envoyé par ton enfant");
   }
