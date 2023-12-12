@@ -15,6 +15,10 @@ import { AddAccountComponent } from './accounts/add-account/add-account.componen
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
+import { CustomDirDirective } from './custom-dir.directive';
+import { ShortPipe } from './pipes/short.pipe';
+import { FiltrePipe } from './pipes/filtre.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { MsWordComponent } from './ms-word/ms-word.component';
     AddAccountComponent,
     HomeAccountComponent,
     ItemAccountComponent,
-    MsWordComponent
+    MsWordComponent,
+    ManageServersComponent,
+    CustomDirDirective,
+    ShortPipe,
+    FiltrePipe
   ],
   imports: [
     BrowserModule, CommonModule, FormsModule
