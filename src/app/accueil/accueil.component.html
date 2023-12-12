@@ -1,0 +1,15 @@
+<h2>Bienvenue chez InfoGones (Angular)</h2>
+
+<h4>Navigation côté HTML</h4>
+<!-- route statique -->
+<button routerLink="cv" class="btn btn-primary">Go To CV</button>
+
+<!-- route dynamique cv/id -->
+<!-- <a [routerLink]="['cv', id, 'formateur', prenom, age]" class="btn btn-danger">Go To Servers</a> -->
+<a [routerLink]="['servers']" class="btn btn-danger">Go To Servers</a>
+
+<br>
+<h4>Navigation côté TS</h4>
+<button (click)="goToCv()" class="btn btn-warning">Go To CV</button>
+<button (click)="goToServers()" class="btn btn-info">Go To Servers</button>
+

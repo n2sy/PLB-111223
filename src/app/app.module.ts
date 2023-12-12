@@ -23,6 +23,13 @@ import { NoAvatarPipe } from './pipes/no-avatar.pipe';
 import { FirstService } from './services/first.service';
 import { SecondService } from './services/second.service';
 import { RecruesComponent } from './recrues/recrues.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { PLB_ROUTING } from './app.routing';
+import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -43,10 +50,16 @@ import { RecruesComponent } from './recrues/recrues.component';
     ShortPipe,
     FiltrePipe,
     NoAvatarPipe,
-    RecruesComponent
+    RecruesComponent,
+    AccueilComponent,
+    InfosComponent,
+    AddComponent,
+    EditComponent,
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
-    BrowserModule, CommonModule, FormsModule
+    BrowserModule, CommonModule, FormsModule, PLB_ROUTING
   ],
   providers: [FirstService, SecondService],
   bootstrap: [AppComponent]
