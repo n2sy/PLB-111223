@@ -22,6 +22,7 @@ import { FiltrePipe } from './pipes/filtre.pipe';
 import { NoAvatarPipe } from './pipes/no-avatar.pipe';
 import { FirstService } from './services/first.service';
 import { SecondService } from './services/second.service';
+import { RecruesComponent } from './recrues/recrues.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SecondService } from './services/second.service';
     CustomDirDirective,
     ShortPipe,
     FiltrePipe,
-    NoAvatarPipe
+    NoAvatarPipe,
+    RecruesComponent
   ],
   imports: [
     BrowserModule, CommonModule, FormsModule

@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Candidat } from '../models/Candidat';
 import { FirstService } from '../services/first.service';
 import { GereCandidatsService } from '../services/gere-candidats.service';
+import { GererRecruesService } from '../services/gerer-recrues.service';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.css',
-  // providers : [FirstService]
+   providers : [GererRecruesService]
 })
 export class CvComponent {
   tabCandidats : Candidat[] = [];
