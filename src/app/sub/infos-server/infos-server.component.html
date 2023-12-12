@@ -1,1 +1,9 @@
-<p>infos-server works!</p>
+
+<div class="container">
+    <strong> {{ myServer['title'] }} </strong>
+    <hr>
+    <p>Le statut du server est {{ myServer['statut'] }} </p>
+
+    <button [disabled]="disabledButton" class="btn btn-info">Editer</button>
+    <i *ngIf="disabledButton">Impossible d'éditer ce serveur</i>
+</div>

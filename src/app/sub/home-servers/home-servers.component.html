@@ -1,1 +1,17 @@
-<p>home-servers works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <ol class="list-group">
+                <li [routerLink]="[serv.id, serv.title, serv.statut]" 
+                [queryParams]="{'allowEdit' : serv.id == 3 ? '1' : '0'}"
+                *ngFor="let serv of tabServers" class="list-group-item">
+                    {{ serv.title }}
+                </li>
+            </ol>
+        </div>
+        <div class="col-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
