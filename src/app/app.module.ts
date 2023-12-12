@@ -19,6 +19,9 @@ import { ManageServersComponent } from './manage-servers/manage-servers.componen
 import { CustomDirDirective } from './custom-dir.directive';
 import { ShortPipe } from './pipes/short.pipe';
 import { FiltrePipe } from './pipes/filtre.pipe';
+import { NoAvatarPipe } from './pipes/no-avatar.pipe';
+import { FirstService } from './services/first.service';
+import { SecondService } from './services/second.service';
 
 @NgModule({
   declarations: [
@@ -37,12 +40,13 @@ import { FiltrePipe } from './pipes/filtre.pipe';
     ManageServersComponent,
     CustomDirDirective,
     ShortPipe,
-    FiltrePipe
+    FiltrePipe,
+    NoAvatarPipe
   ],
   imports: [
     BrowserModule, CommonModule, FormsModule
   ],
-  providers: [],
+  providers: [FirstService, SecondService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,36 @@
 import { Component } from '@angular/core';
 import { Candidat } from '../models/Candidat';
+import { FirstService } from '../services/first.service';
+import { GereCandidatsService } from '../services/gere-candidats.service';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.css'
+  styleUrl: './cv.component.css',
+  // providers : [FirstService]
 })
 export class CvComponent {
-  tabCandidats : Candidat[] = [
-    new Candidat(1, "Homer", "Simpson", 33, "Ingénieur", "homer.png"),
-    new Candidat(2, "Bart", "Simpson", 25, "Stagiaire", "bart.jpeg"),
-    new Candidat(3, "Lisa", "Simpson", 20, "Designer", "lisa.png"),
-  ];
+  tabCandidats : Candidat[] = [];
   selectedCandidat : Candidat;
+
+  constructor(private firstSer : FirstService, private candSer : GereCandidatsService) {}
+
+  ngOnInit() {
+    // this.firstSer.secondSer.showInfos();
+    this.firstSer.showInfos();
+    this.tabCandidats = this.candSer.getAllCandidats();
+  }
 
   recupererCandidat(cand) {
     this.selectedCandidat = cand;
+  }
+
+  addCandidat() {
+    this.candSer.addNewCandidat();
+  }
+
+  showCandidats() {
+    console.log(this.candSer.getAllCandidats());
+    
   }
 }

@@ -5,13 +5,12 @@
                 <img src="../../assets/rotating_card_thumb2.png"/>
             </div>
             <div class="user">
-                <img class="img-circle" src="../../assets/{{ selCandidat.avatar }}"/>
+                <img class="img-circle" src="../../assets/{{ selCandidat.avatar | noAvatar }}"/>
             </div>
             <div class="content">
                 <div class="main">
                     <h3 class="name">{{ selCandidat.prenom }} {{ selCandidat.nom }}</h3>
                     <p class="profession">{{ selCandidat.age }}</p>
-
                     <p class="text-center">{{ selCandidat.profession }}</p>
                 </div>
                 <div class="footer">

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './manage-servers.component.css'
 })
 export class ManageServersComponent {
+  selectedStatut = '';
   listServers = [
     {
       title : "Production Server",
@@ -32,6 +33,17 @@ export class ManageServersComponent {
       statut : 'stable'
     }
   ];
+
+  addServer() {
+    this.listServers.push(
+      {
+        title : "NEW SERVER",
+        type : "large",
+        date_d : new Date(),
+        statut : 'stable'
+      }
+    )
+  }
 
   affecterClass(st) {
     return {
