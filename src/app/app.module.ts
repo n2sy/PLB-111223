@@ -37,6 +37,7 @@ import { addTokenInterceptor } from './add-token.interceptor';
 import { AllowGuard } from './allow.guard';
 import { DenyGuard } from './deny.guard';
 import { BlockGuard } from './block.guard';
+import { StandComponent } from './stand/stand.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { BlockGuard } from './block.guard';
     ReactFormComponent
   ],
   imports: [
-  BrowserModule, CommonModule, FormsModule, PLB_ROUTING, ReactiveFormsModule, HttpClientModule
+  BrowserModule, CommonModule, FormsModule, PLB_ROUTING, ReactiveFormsModule, HttpClientModule, StandComponent
   ],
   providers: [FirstService, SecondService, provideHttpClient(withInterceptors([addTokenInterceptor])), AllowGuard, DenyGuard, BlockGuard ],
   bootstrap: [AppComponent]
