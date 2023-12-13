@@ -8,7 +8,7 @@
     <label for="">Mot de passe</label>
     <input type="text" class="form-control" ngModel name="password">
 
-    <div ngModelGroup="infos" #infos="ngModelGroup">
+    <!-- <div ngModelGroup="infos" #infos="ngModelGroup">
         <label for="langage">Langage préféré</label>
         <select [ngModel]="defaultLang" name="langage" id="langage" class="form-control">
             <option value=""></option>
@@ -34,14 +34,14 @@
         <p *ngIf="exp.errors['required']">Ce champ est required</p>
         <p *ngIf="exp.errors['minlength']">Le nbre minimal de caractères est 5</p>
         <p *ngIf="exp.errors['pattern']">Le pattern est "nidhal"</p>
-    </div>
+    </div> -->
 
 
     <button type="submit" class="btn btn-primary">Se connecter</button>
-    <button (click)="resetHandler(f)" class="btn btn-danger">Reset</button>
+    <!-- <button (click)="resetHandler(f)" class="btn btn-danger">Reset</button>
     
     <button (click)="genratePwd(f)" class="btn btn-info">Generate Password</button>
-    <button (click)="genratePwdII(f)" class="btn btn-dark">Generate Password II</button>
+    <button (click)="genratePwdII(f)" class="btn btn-dark">Generate Password II</button> -->
 
     <pre>
         {{ f.value | json}}

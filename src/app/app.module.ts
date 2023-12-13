@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { CvComponent } from './cv/cv.component';
 import { ItemComponent } from './item/item.component';
@@ -31,6 +31,7 @@ import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 @NgModule({
   declarations: [
@@ -58,10 +59,11 @@ import { LoginComponent } from './login/login.component';
     EditComponent,
     NotFoundComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    ReactFormComponent
   ],
   imports: [
-    BrowserModule, CommonModule, FormsModule, PLB_ROUTING
+    BrowserModule, CommonModule, FormsModule, PLB_ROUTING, ReactiveFormsModule
   ],
   providers: [FirstService, SecondService],
   bootstrap: [AppComponent]
