@@ -5,7 +5,7 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/cv" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">CV</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="auth.estConnecte()">
       <a class="nav-link" routerLink="/cv/add" routerLinkActive="active">Ajouter CV</a>
     </li>
     <li class="nav-item">
@@ -14,7 +14,10 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/servers" routerLinkActive="active">Servers</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="!auth.estConnecte()">
       <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+    </li>
+    <li class="nav-item" *ngIf="auth.estConnecte()">
+      <a class="nav-link" (click)="auth.seDeconnecter()" routerLinkActive="active">Logout</a>
     </li>
   </ul>

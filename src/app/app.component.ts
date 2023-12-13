@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,4 +12,6 @@ export class AppComponent {
   traitementDuApp(msg : any) {
     alert(msg);
   }
+
+  
 }

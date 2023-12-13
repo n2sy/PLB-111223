@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,7 +12,24 @@ export class AccueilComponent {
   prenom = "nidhal";
   age = 40;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private http : HttpClient) { } //Apollo Client
+
+  ngOnInit() {
+    // this.http.get('https://jsonplaceholder.typicode.com/userrrs').subscribe(
+    //   {
+    //     next : (response) => {
+    //       console.log(response);
+    //     },
+    //     error : (err) => {
+    //       console.log(err);    
+    //     },
+    //     complete : () => {
+    //       console.log("Flux terminé");
+          
+    //     }
+    //   }
+    // )
+  }
 
   goToServers() {
     // Traitement

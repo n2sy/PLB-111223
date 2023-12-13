@@ -32,6 +32,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { addTokenInterceptor } from './add-token.interceptor';
+import { AllowGuard } from './allow.guard';
+import { DenyGuard } from './deny.guard';
+import { BlockGuard } from './block.guard';
 
 @NgModule({
   declarations: [
@@ -63,9 +68,9 @@ import { ReactFormComponent } from './react-form/react-form.component';
     ReactFormComponent
   ],
   imports: [
-    BrowserModule, CommonModule, FormsModule, PLB_ROUTING, ReactiveFormsModule
+  BrowserModule, CommonModule, FormsModule, PLB_ROUTING, ReactiveFormsModule, HttpClientModule
   ],
-  providers: [FirstService, SecondService],
+  providers: [FirstService, SecondService, provideHttpClient(withInterceptors([addTokenInterceptor])), AllowGuard, DenyGuard, BlockGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

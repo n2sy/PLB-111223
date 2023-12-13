@@ -15,13 +15,32 @@ export class EditComponent {
     private router : Router ) { }
 
   ngOnInit() {
-    this.uCand = this.candSer.getCandidatById(this.activatedRoute.snapshot.paramMap.get('id'))
-
+    this.candSer.getCandidatByIdAPI(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(
+      {
+        next : (response : Candidat) => {
+          this.uCand = response;
+        },
+        error : (err) => {
+          console.log(err);
+          
+        }
+      }
+    )
   }
 
   onValider() {
-    this.candSer.updateCandidat(this.uCand);
-    this.router.navigateByUrl('/cv')
+    this.candSer.updateCandidatAPI(this.uCand).subscribe(
+      {
+        next : (response) => {
+          alert(response['message']);
+          this.router.navigateByUrl('/cv')
+        },
+        error : (err) => {
+          console.log(err);
+          
+        }
+      }
+    )
   }
 
 

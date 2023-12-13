@@ -6,7 +6,7 @@
         <div class="tab-pane active" id="profile">
           
           <div class="d-flex justify-content-center">
-            <img width="150px" height="150px" class="rounded-circle align-content-center" src="../../assets/{{cand.avatar | noAvatar}}" alt="">
+            <img width="150px" height="150px" class="rounded-circle align-content-center" src="../../assets/{{cand?.avatar | noAvatar}}" alt="">
           </div>
           <div class="row">
             <div class="col-md-12">
@@ -15,26 +15,26 @@
                 <tbody>
                 <tr>
                   <td>
-                    <strong>Prénom</strong> {{ cand.prenom }}
+                    <strong>Prénom</strong> {{ cand?.prenom }}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Nom</strong>  {{ cand.nom }}
+                    <strong>Nom</strong>  {{ cand?.nom }}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Age</strong> {{ cand.age }} ans
+                    <strong>Age</strong> {{ cand?.age }} ans
                 </tr>
                 <tr>
                   <td>
-                    <strong>Profession</strong>  {{ cand.profession }}
+                    <strong>Profession</strong>  {{ cand?.profession }}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Image</strong>  {{ cand.avatar }}
+                    <strong>Image</strong>  {{ cand?.avatar }}
                   </td>
                 </tr>
                 </tbody>

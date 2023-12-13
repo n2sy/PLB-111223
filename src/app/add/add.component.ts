@@ -12,7 +12,17 @@ export class AddComponent {
   constructor(private candSer : GereCandidatsService, private router : Router) { }
 
   onSubmit(fValue) {
-    this.candSer.addNewCandidat(fValue);
-    this.router.navigateByUrl('/cv')
+    this.candSer.addNewCandidatAPI(fValue).subscribe(
+      {
+        next : (response) => {
+          alert(response["message"]);
+          this.router.navigateByUrl('/cv')
+        },
+        error : (err) => {
+          console.log(err);
+          
+        }
+      }
+    )
   }
 }
