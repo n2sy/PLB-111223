@@ -17,7 +17,22 @@ export class GereCandidatsService {
     return this.tabCands;
   }
 
-  addNewCandidat() {
-    this.tabCands.push( new Candidat(5, "NEW", "CANDIDAT", 40, "Formateur"))
+  getCandidatById(id) {
+    return this.tabCands.find((c) => c.id == id)
   }
+
+  deleteCandidat(id) {
+    let i = this.tabCands.findIndex((c) => c.id == id);
+    this.tabCands.splice(i, 1);
+  }
+
+  updateCandidat(uCand) {
+    let i = this.tabCands.indexOf(uCand);
+    this.tabCands[i] = uCand;
+  }
+
+  addNewCandidat(newCand) {
+    newCand.id = this.tabCands[this.tabCands.length - 1].id + 1;
+    this.tabCands.push(newCand);
+    }
 }

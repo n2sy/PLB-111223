@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { GereCandidatsService } from '../services/gere-candidats.service';
+import { Candidat } from '../models/Candidat';
 
 @Component({
   selector: 'app-infos',
@@ -8,18 +10,29 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class InfosComponent {
   id;
-  constructor(private activatedRoute : ActivatedRoute) { }
+  cand : Candidat;
+  constructor(private activatedRoute : ActivatedRoute, private candSer : GereCandidatsService,
+    private router : Router) { }
 
   ngOnInit() {
-    //this.id = this.activatedRoute.snapshot.params['id']
-    // this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    // Version avec les observables
+    // this.activatedRoute.paramMap.subscribe(
+    //   {
+    //     next : (p: ParamMap) => {
+    //       this.id = p.get('id');
+    //     }
+    //   }
+    // )
 
-    this.activatedRoute.paramMap.subscribe(
-      {
-        next : (p: ParamMap) => {
-          this.id = p.get('id');
-        }
-      }
-    )
+    //this.id = this.activatedRoute.snapshot.params['id']
+
+    this.cand = this.candSer.getCandidatById(this.activatedRoute.snapshot.paramMap.get('id'))
+  }
+
+  onDelete() {
+    if(confirm('Etes vous sur de vouloir supprimer ce candidat ?')) {
+      this.candSer.deleteCandidat(this.cand['id']); // this.cand.id
+      this.router.navigateByUrl('/cv');
+    }
   }
 }
