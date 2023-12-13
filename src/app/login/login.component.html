@@ -1,14 +1,51 @@
 
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="submitHandler(f)">
     <label for="">Login</label>
-    <input required email type="text" ngModel name="login" class="form-control">
+    <input #loginInput="ngModel" required email type="text" ngModel name="login" class="form-control">
+
+    <div *ngIf="loginInput.invalid && loginInput.touched" class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
 
     <label for="">Mot de passe</label>
     <input type="text" class="form-control" ngModel name="password">
 
-    <button (click)="submitHandler(f)" type="submit" class="btn btn-primary">Se connecter</button>
+    <div ngModelGroup="infos" #infos="ngModelGroup">
+        <label for="langage">Langage préféré</label>
+        <select [ngModel]="defaultLang" name="langage" id="langage" class="form-control">
+            <option value=""></option>
+            <option value="windev">Windev</option>
+            <option value="js">javascript</option>
+            <option value="php">php</option>
+        </select>
+    
+        {{ defaultLang }}
+        <br>
+    
+        <label for="">Commentaire</label>
+        <textarea minlength="20" [(ngModel)]="myCommentaire" class="form-control" name="commentaire" cols="5" rows="3"></textarea>
+        {{ myCommentaire }}
+        <br>
+        <div *ngIf="infos.invalid" class="alert alert-danger">Le nbre minimal de caractères est 20</div>
+
+    </div>
+
+    <label for="">Gestion d'erreurs</label>
+    <input #exp="ngModel" ngModel name="exemple" required minlength="5" pattern="nidhal" type="text" class="form-control">
+    <div *ngIf="exp.invalid" class="alert alert-danger">
+        <p *ngIf="exp.errors['required']">Ce champ est required</p>
+        <p *ngIf="exp.errors['minlength']">Le nbre minimal de caractères est 5</p>
+        <p *ngIf="exp.errors['pattern']">Le pattern est "nidhal"</p>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+    <button (click)="resetHandler(f)" class="btn btn-danger">Reset</button>
+    
+    <button (click)="genratePwd(f)" class="btn btn-info">Generate Password</button>
+    <button (click)="genratePwdII(f)" class="btn btn-dark">Generate Password II</button>
 
     <pre>
         {{ f.value | json}}
     </pre>
 </form>
+
+
